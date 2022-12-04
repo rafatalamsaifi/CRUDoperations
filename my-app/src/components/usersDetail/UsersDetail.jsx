@@ -25,7 +25,7 @@ const UsersDetail = () => {
     //     setAPIData(data.data)
     // }
     const getData = ()=>{
-        axios.get("https://crudcrud.com/api/2604ed419f344dc7ae626f409719fa23/unicorns").then((resp) => {
+        axios.get(`https://crudcrud.com/api/2604ed419f344dc7ae626f409719fa23/unicorns`).then((resp) => {
             console.log("resp => ", resp)
             setApiData(resp.data)
         })

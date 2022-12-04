@@ -17,7 +17,7 @@ const AddUsers = () => {
             age,
             checkbox
         }
-         axios.post("https://crudcrud.com/api/2604ed419f344dc7ae626f409719fa23/unicorns", formData)
+         axios.post(`https://crudcrud.com/api/2604ed419f344dc7ae626f409719fa23/unicorns`, formData)
         console.log(firstName)
         console.log(lastName)
         console.log(age)
@@ -46,9 +46,9 @@ const AddUsers = () => {
                 <Form.Field>
                     <Checkbox label='I agree to the Terms and Conditions' onChange={(e)=>(setCheckbox(!checkbox))}/>
                 </Form.Field>
-                <Button onClick={postData} type='submit' class="ui primary button">Submit</Button>
+                <Button onClick={postData} type='submit' className="ui primary button">Submit</Button>
                 <Link to="/usersdetail">
-                <Button class="ui secondary button">Users Detail</Button>
+                <Button className="ui secondary button">Users Detail</Button>
                 </Link>
             </Form>
             <p style={{color: "green"}} id='demo' ></p>
