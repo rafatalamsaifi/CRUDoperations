@@ -1,6 +1,7 @@
 import React, { useState } from 'react'
 import { Button, Checkbox, Form } from 'semantic-ui-react'
 import axios from "axios";
+import { Link } from 'react-router-dom';
 // import "./AddUsers.css"
 
 const AddUsers = () => {
@@ -16,11 +17,12 @@ const AddUsers = () => {
             age,
             checkbox
         }
-         axios.post("https://crudcrud.com/api/913d74e8894f4865b38f00e60e6a8839/unicorns", formData)
+         axios.post("https://crudcrud.com/api/2604ed419f344dc7ae626f409719fa23/unicorns", formData)
         console.log(firstName)
         console.log(lastName)
         console.log(age)
         console.log(checkbox)
+        document.getElementById('demo').innerHTML = "Data added successfully!"
     }
 
     
@@ -29,7 +31,7 @@ const AddUsers = () => {
             
             <Form>
                 <h2>Fill the Form.</h2>
-                <Form.Field>
+                <Form.Field className="m-3" >
                     <label>First Name</label>
                     <input placeholder='First Name' onChange={(e)=> setFirstName(e.target.value)}/>
                 </Form.Field>
@@ -44,8 +46,12 @@ const AddUsers = () => {
                 <Form.Field>
                     <Checkbox label='I agree to the Terms and Conditions' onChange={(e)=>(setCheckbox(!checkbox))}/>
                 </Form.Field>
-                <Button onClick={postData} type='submit'>Submit</Button>
+                <Button onClick={postData} type='submit' class="ui primary button">Submit</Button>
+                <Link to="/usersdetail">
+                <Button class="ui secondary button">Users Detail</Button>
+                </Link>
             </Form>
+            <p style={{color: "green"}} id='demo' ></p>
         </div>
     )
 }
