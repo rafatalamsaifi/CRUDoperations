@@ -1,6 +1,6 @@
 import React, { useState } from 'react'
 import { Button, Checkbox, Form } from 'semantic-ui-react'
-import axios from "axios";
+import axios from "../axios"
 import { Link } from 'react-router-dom';
 // import "./AddUsers.css"
 

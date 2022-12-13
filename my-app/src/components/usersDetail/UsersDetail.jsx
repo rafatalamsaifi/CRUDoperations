@@ -1,4 +1,4 @@
-import axios from 'axios';
+import axios from "../axios"
 import React, { useState, useEffect } from 'react';
 import { Button, Table } from 'semantic-ui-react'
 import { Link } from 'react-router-dom';
@@ -8,7 +8,7 @@ const UsersDetail = () => {
     const [apiData, setApiData] = useState([])
     try {
         useEffect(() => {
-        axios.get(`https://crudcrud.com/api/2604ed419f344dc7ae626f409719fa23/unicorns`).then((resp) => {
+        axios.get(`/unicorns`).then((resp) => {
             console.log("resp => ", resp)
             setApiData(resp.data)
         })
@@ -25,7 +25,7 @@ const UsersDetail = () => {
     //     setAPIData(data.data)
     // }
     const getData = ()=>{
-        axios.get(`https://crudcrud.com/api/2604ed419f344dc7ae626f409719fa23/unicorns`).then((resp) => {
+        axios.get(`/unicorns`).then((resp) => {
             console.log("resp => ", resp)
             setApiData(resp.data)
         })
@@ -33,7 +33,7 @@ const UsersDetail = () => {
     }
 
     const onDelete = (id)=>{
-        axios.delete(`https://crudcrud.com/api/2604ed419f344dc7ae626f409719fa23/unicorns/${id}`)
+        axios.delete(`/unicorns/${id}`)
         .then(()=>{
             getData();
         })
